@@ -1,4 +1,4 @@
-import ILangue from "../../models/langues/langue.interface";
+import ILangue from "../../src/domain/langue.interface";
 
 export default class LangueStub implements ILangue {
   Feliciter(): string {
