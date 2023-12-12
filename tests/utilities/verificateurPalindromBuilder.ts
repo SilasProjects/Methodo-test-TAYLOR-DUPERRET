@@ -1,8 +1,9 @@
-import LangueFrancaise from "../../models/langues/langueFrancaise";
+import ILangue from "../../models/langues/langue.interface";
 import VerificateurPalindrome from "../../models/verificateurPalindrome";
+import LangueStub from "./langueStub";
 
 export default class VerificateurPalindromeBuilder {
-  private lang = new LangueFrancaise();
+  private lang: ILangue = new LangueStub();
 
   public Default(): VerificateurPalindrome {
     return new VerificateurPalindromeBuilder().Build();
@@ -12,7 +13,7 @@ export default class VerificateurPalindromeBuilder {
     return new VerificateurPalindrome(this.lang);
   }
 
-  public AyantPourLangue(lang: LangueFrancaise): VerificateurPalindromeBuilder {
+  public AyantPourLangue(lang: ILangue): VerificateurPalindromeBuilder {
     this.lang = lang;
     return this;
   }

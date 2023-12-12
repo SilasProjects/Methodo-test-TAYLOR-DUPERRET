@@ -1,9 +1,9 @@
 import os from "os";
-import LangueInterface from "./langues/langue.interface";
+import ILangue from "./langues/langue.interface";
 
 export default class VerificateurPalindrome {
-  private lang: LangueInterface;
-  constructor(lang: LangueInterface) {
+  private lang: ILangue;
+  constructor(lang: ILangue) {
     this.lang = lang;
   }
 

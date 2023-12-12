@@ -3,10 +3,10 @@ import os from "os";
 import LangueFrancaise from "../models/langues/langueFrancaise";
 import VerificateurPalindromeBuilder from "./utilities/verificateurPalindromBuilder";
 import LangueAnglaise from "../models/langues/langueAnglaise";
-import LangueInterface from "../models/langues/langue.interface";
+import ILangue from "../models/langues/langue.interface";
 
 describe("On vérifie si l'entrée est un palindrome.", () => {
-  type Test = [string, LangueInterface];
+  type Test = [string, ILangue];
   const palindromes: Test[] = [
     ["kayak", new LangueFrancaise()],
     ["radar", new LangueAnglaise()],
@@ -30,7 +30,7 @@ describe("On vérifie si l'entrée est un palindrome.", () => {
 
   test.each(palindromes)(
     "ETANT DONNE un utilisateur parlant une langue QUAND on saisit un palindrome ALORS celui-ci est renvoyé ET le « Bien dit » de cette langue est envoyé.",
-    (chaine: string, lang: LangueInterface) => {
+    (chaine: string, lang: ILangue) => {
       const vérificateur = new VerificateurPalindromeBuilder()
         .AyantPourLangue(lang)
         .Build();
@@ -43,7 +43,7 @@ describe("On vérifie si l'entrée est un palindrome.", () => {
 
   test.each([...palindromes, ...nonPalindromes])(
     "ETANT DONNE un utilisateur parlant une langue QUAND on saisit une chaine ALORS le « Bonjour » de cette langue est envoyé avant toute réponse.",
-    (chaine: string, lang: LangueInterface) => {
+    (chaine: string, lang: ILangue) => {
       const verificateur = new VerificateurPalindromeBuilder()
         .AyantPourLangue(lang)
         .Build();
@@ -54,7 +54,7 @@ describe("On vérifie si l'entrée est un palindrome.", () => {
 
   test.each([...palindromes, ...nonPalindromes])(
     "ETANT DONNE un utilisateur parlant une langue QUAND on saisit une chaine ALORS le « Au revoir » de cette langue est envoyé en dernier.",
-    (chaine: string, lang: LangueInterface) => {
+    (chaine: string, lang: ILangue) => {
       const verificateur = new VerificateurPalindromeBuilder()
         .AyantPourLangue(lang)
         .Build();

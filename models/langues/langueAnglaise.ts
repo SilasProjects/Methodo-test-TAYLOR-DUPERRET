@@ -1,7 +1,7 @@
 import Expressions from "./expressions";
-import LangueInterface from "./langue.interface";
+import ILangue from "./langue.interface";
 
-export default class LangueAnglaise implements LangueInterface {
+export default class LangueAnglaise implements ILangue {
   Feliciter(): string {
     return Expressions.WELL_SAID;
   }
