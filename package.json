@@ -2,11 +2,10 @@
   "name": "console",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
-  "main": "index.ts",
+  "main": "src/main.ts",
   "scripts": {
     "test": "jest",
-    "start": "ts-node --esm index.ts"
+    "start": "ts-node src/main.ts"
   },
   "keywords": [],
   "author": "",

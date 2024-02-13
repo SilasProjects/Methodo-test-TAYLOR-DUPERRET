@@ -1,5 +1,5 @@
 import { describe, expect, test } from "@jest/globals";
-import os from "os";
+import * as os from "os";
 import VerificateurPalindromeBuilder from "./utilities/verificateurPalindromBuilder";
 import ILangue from "../src/domain/langue.interface";
 import MomentDeLaJournee from "../src/domain/momentDeLaJournee";
@@ -7,7 +7,7 @@ import LangueFrancaise from "../src/domain/langueFrancaise";
 import LangueAnglaise from "../src/domain/langueAnglaise";
 import Expressions from "../src/domain/expressions";
 
-describe("On vérifie si l'entrée est un palindrome.", () => {
+describe("Palindrome :", () => {
   test.each([["kayak"], ["ynov"]])(
     [
       "QUAND on saisit une chaine",
